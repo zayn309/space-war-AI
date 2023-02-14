@@ -91,8 +91,8 @@ class Game:
         self.yellow.move_bullets()
         self.red.move_bullets()
         self.red_bullet_collision()
-        self.red_award_collision()
         self.yellow_bullet_collision()
+        self.red_award_collision()
         self.yellow_award_collision()
 
     def rais_winner(self):

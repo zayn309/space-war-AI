@@ -14,10 +14,9 @@ it's like the interface that you deal with to control the game via simple method
 
 # AI class 
 
-it's the class that encapsulate the methods to deal with the ai like test_AI that takes a genome and test it against a human player and train_AI that trains all the neural networks of all the genomes
+it's the class that encapsulate the methods to deal with the AI like test_AI that takes a genome and test it against a human player and train_AI that trains all the neural networks of all the genomes
 
 # training approch
 
 the approch that i'm currently using is training all genomes against each others,
-as the game is multiplayer game so the performance of your AI depends on your oponent so you need a perfect player to train you AI on but this your main goal, you can make the AI playes against him self but this is gonna result in an AI that won't do much with anybody but itself, so making every genome playes with every other genome is convenient to get  us a good AI.
-
+as the game is multiplayer game so the performance of your AI depends on your oponent so you need a perfect player to train you AI on but this your main goal in the first place, you can make the AI playes against him self but this is gonna result in an AI that won't do much with anybody but itself, so making every genome playes with every other genome is convenient to get  us a good AI, it's gonna take long time to train but it's gonna give a pretty good AI.

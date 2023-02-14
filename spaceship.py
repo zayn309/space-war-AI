@@ -24,6 +24,14 @@ class spaceship(ABC):
         self.max_bullets = MAX_BULLETS
     def add_award(self,award):
         self.award.append(award)
+    def move_left(self):
+        self.rect.x -= self.vel
+    def move_right(self):
+        self.rect.x += self.vel
+    def move_up(self):
+        self.rect.y -= self.vel
+    def move_down(self):
+        self.rect.y += self.vel
     @abstractmethod
     def move(self,keys_pressed):
         pass
@@ -55,27 +63,27 @@ class leftSpaceShip(spaceship):
     def __init__(self,image,x,y,bullet_color):
         super().__init__(image,x,y,bullet_color)
     #override the abstract methods 
-    def move(self,keys_pressed):
+    def move(self,keys_pressed ): 
         if keys_pressed[pygame.K_a] and self.rect.x - self.vel > 0:  # LEFT
-            self.rect.x -= self.vel
+            self.move_left()
         if keys_pressed[pygame.K_d] and self.rect.x + self.vel + self.rect.width < BORDER.x:  # RIGHT
-            self.rect.x += self.vel
+            self.move_right()
         if keys_pressed[pygame.K_w] and self.rect.y - self.vel > 0:  # UP
-            self.rect.y -= self.vel
+            self.move_up()
         if keys_pressed[pygame.K_s] and self.rect.y + self.vel + self.rect.height <HEIGHT:  # DOWN
-            self.rect.y += self.vel
+            self.move_down()
+    
 
 class rightSpaceShipe(spaceship):
 
     def __init__(self,image,x,y,bullet_color):
         super().__init__(image,x,y,bullet_color,leftSide= False)
-    
     def move(self,keys_pressed):
         if keys_pressed[pygame.K_LEFT] and self.rect.x - self.vel > BORDER.x + BORDER.width:  # LEFT
-            self.rect.x -= self.vel
+            self.move_left()
         if keys_pressed[pygame.K_RIGHT] and self.rect.x + self.vel + self.rect.width < WIDTH:  # RIGHT
-            self.rect.x += self.vel
+            self.move_right()
         if keys_pressed[pygame.K_UP] and self.rect.y - self.vel > 0:  # UP
-            self.rect.y -= self.vel
+            self.move_up()
         if keys_pressed[pygame.K_DOWN] and self.rect.y + self.vel + self.rect.height < HEIGHT:  # DOWN
-            self.rect.y += self.vel
+            self.move_down()
