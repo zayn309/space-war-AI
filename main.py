@@ -230,7 +230,7 @@ def eval_genomes(genomes, config):
             ai.train_AI(genome1, genome2, config)
 
 def run_neat(config):
-    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-5')
+    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-8')
     #p = neat.Population(config)
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
